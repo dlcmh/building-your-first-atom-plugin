@@ -30,8 +30,13 @@ export default {
     let self = this
 
     if (editor = atom.workspace.getActiveTextEditor()) {
-      let selection = editor.getSelectedText()
-      this.download(selection).then((html) => {
+      let query = editor.getSelectedText()
+      let language = editor.getGrammar().name
+
+      self.search(query, language).then((url) => {
+        atom.notifications.addSuccess('Found google results!')
+        return self.download(url)
+      }).then((html) => {
         let answer = self.scrape(html)
         if (answer === '') {
           atom.notifications.addWarning('No answer found :(')
