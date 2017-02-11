@@ -10,3 +10,5 @@ Running the starter code:
 - repeatedly run `menu > Packages > sourcefetch > Toggle` or `cmd-shift-p > sourcefetch: Toggle` to view the seeded functionality in action
 
 Code for seeded functionality is in 'lib/sourcefetch.js'.
+
+Make `sourcefetch:toggle` reverse selected text.
