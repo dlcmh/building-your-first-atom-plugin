@@ -8,3 +8,5 @@ Running the starter code:
 
 - `cmd-shift-p > Window: Reload` -> ensures Atom runs latest version of source code - needs to be run before changes made to the package can be tested
 - repeatedly run `menu > Packages > sourcefetch > Toggle` or `cmd-shift-p > sourcefetch: Toggle` to view the seeded functionality in action
+
+Code for seeded functionality is in 'lib/sourcefetch.js'.
