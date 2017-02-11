@@ -2,6 +2,7 @@
 
 import { CompositeDisposable } from 'atom'
 import request from 'request'
+import cheerio from 'cheerio'
 
 export default {
 
@@ -31,6 +32,11 @@ export default {
         atom.notifications.addWarning(error.reason)
       })
     }
+  },
+
+  scrape(html) {
+    $ = cheerio.load(html)
+    return $('.accepted-answer pre code').text()
   },
 
   download(url) {
