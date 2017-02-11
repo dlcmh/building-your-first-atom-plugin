@@ -3,6 +3,9 @@
 import { CompositeDisposable } from 'atom'
 import request from 'request'
 import cheerio from 'cheerio'
+import google from 'google'
+
+google.resultsPerPage = 1
 
 export default {
 
