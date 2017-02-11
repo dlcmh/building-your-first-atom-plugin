@@ -12,3 +12,9 @@ Running the starter code:
 Code for seeded functionality is in 'lib/sourcefetch.js'.
 
 Make `sourcefetch:toggle` reverse selected text.
+
+To install NodeJS modules:
+
+- navigate to the package's root folder
+- `npm install --save request@2.79.0`
+- `apm install`
