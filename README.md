@@ -26,3 +26,9 @@ To view the new http download function in action:
 - select a piece of URL text and run `Sourcefetch:Fetch` from `cmd-shift-p` or press `ctrl-option-o`
 
 Change `download()` to return a Promise so that we can insert the downloaded `body` into the editor. A Promise returns values obtained asynchronously by wrapping the asynchronous logic in a function that provides two callbacks - `resolve` for returning a value successfully, and `reject` to notify the caller of an error.
+
+Install Cheerio, an implementation of jQuery that allows for running DOM selection queries on the server:
+
+- navigate to the package's root folder
+- npm install --save cheerio@0.22.0
+- apm install
