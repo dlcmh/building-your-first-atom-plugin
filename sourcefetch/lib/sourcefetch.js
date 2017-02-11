@@ -44,6 +44,26 @@ export default {
     }
   },
 
+  search(query, language) {
+    return new Promise((resolve, reject) => {
+      let searchString = `${query} in ${language} site:stackoverflow.com`
+
+      google(searchString, (err, res) => {
+        if (err) {
+          reject({
+            reason: 'A search error has occurred :('
+          })
+        } else if (res.length === 0) {
+          reject({
+            reason: 'No results found :('
+          })
+        } else {
+          resolve(res.links[0].href)
+        }
+      })
+    })
+  },
+
   scrape(html) {
     $ = cheerio.load(html)
     return $('.accepted-answer pre code').text()
