@@ -24,10 +24,17 @@ export default {
 
   fetch() {
     let editor
+    let self = this
+
     if (editor = atom.workspace.getActiveTextEditor()) {
       let selection = editor.getSelectedText()
       this.download(selection).then((html) => {
-        editor.insertText(html)
+        let answer = self.scrape(html)
+        if (answer === '') {
+          atom.notifications.addWarning('No answer found :(')
+        } else {
+          editor.insertText(answer)
+        }
       }).catch((error) => {
         atom.notifications.addWarning(error.reason)
       })
