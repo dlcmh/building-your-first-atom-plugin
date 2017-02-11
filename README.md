@@ -32,3 +32,9 @@ Install Cheerio, an implementation of jQuery that allows for running DOM selecti
 - navigate to the package's root folder
 - npm install --save cheerio@0.22.0
 - apm install
+
+Install google, an unofficial module to search and scrape Google:
+
+- navigate to the package's root folder
+- npm install --save google@2.1.0
+- apm install
