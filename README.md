@@ -18,3 +18,9 @@ To install NodeJS modules:
 - navigate to the package's root folder
 - `npm install --save request@2.79.0`
 - `apm install`
+
+To view the new http download function in action:
+
+- open a new window
+- activate `menu > View > Developer > Toggle Developer Tools` or `option-cmd-i`
+- select a piece of URL text and run `Sourcefetch:Fetch` from `cmd-shift-p` or press `ctrl-option-o`

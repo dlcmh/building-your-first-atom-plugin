@@ -27,7 +27,7 @@ export default {
       let selection = editor.getSelectedText()
       this.download(selection)
     }
-  }
+  },
 
   download(url) {
     request(url, (error, response, body) => {
