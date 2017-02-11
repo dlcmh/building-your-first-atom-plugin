@@ -30,10 +30,16 @@ export default {
   },
 
   download(url) {
-    request(url, (error, response, body) => {
-      if (!error && response.statusCode == 200) {
-        console.log(body)
-      }
+    return new Promise((resolve, reject) => {
+      request(url, (error, response, body) => {
+        if (!error && response.statusCode == 200) {
+          resolve(body)
+        } else {
+          reject({
+            reason: 'Unable to download page'
+          })
+        }
+      })
     })
   }
 };
