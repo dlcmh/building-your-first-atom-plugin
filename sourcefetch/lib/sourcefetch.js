@@ -25,7 +25,11 @@ export default {
     let editor
     if (editor = atom.workspace.getActiveTextEditor()) {
       let selection = editor.getSelectedText()
-      this.download(selection)
+      this.download(selection).then((html) => {
+        editor.insertText(html)
+      }).catch((error) => {
+        atom.notifications.addWarning(error.reason)
+      })
     }
   },
 
